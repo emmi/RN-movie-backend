@@ -1,31 +1,20 @@
 import express, { Router } from 'express';
 // Import index action from movies controller
-import { index } from './controllers/movies';
-import User from './models/user';
+import { save } from './controllers/movies';
+var bodyParser = require('body-parser')
 
 // Initialize the router
 const router = Router();
 
-// Handle /movies.json route with index action from movies controller
-router.route('/movies.json')
-  .get(index);
+router.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-const example = {
-  username: 'emmmi',
-  email: 'emmi@siieretonen.me',
-};
+router.use(bodyParser.json());
 
-router.route('/save')
-  .post(function (req, res) {
-    console.log('moi');
-      let user = new User(example);
-      user.save().then(() => { console.log('tallennettu'); });
-
-      res.json({message: 'Saving a user was successful!'});
-  })
+router.route('/movie/save')
+  .post(save)
   .get(function (req, res) {
-    console.log('hei');
-
       res.json({message: 'First memory'});
   });
 

@@ -2,14 +2,18 @@ import mongoose, { Schema } from 'mongoose';
 
 // Define movie schema
 var movieSchema = new Schema({
-  title: {
-    type: String,
+  id: {
+    type: Number,
     unique: true,
   },
-  poster: String,
-  genre: String,
-  days: Array,
-  times: Array,
+  title: String,
+  year: Number,
+  runtime: Number,
+  genres: Array,
+  status: String,
+  overview: String,
+  posterPath: String,
+  votes: Number,
 });
 
 // Export Mongoose model
