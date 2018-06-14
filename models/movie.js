@@ -1,6 +1,5 @@
 import mongoose, { Schema } from 'mongoose';
 
-// Define movie schema
 var movieSchema = new Schema({
   id: {
     type: Number,
@@ -16,5 +15,4 @@ var movieSchema = new Schema({
   votes: Number,
 });
 
-// Export Mongoose model
 export default mongoose.model('movie', movieSchema);

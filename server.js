@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import router from './router';
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/users');
+mongoose.connect('mongodb://localhost/rn-movies');
 mongoose.connection.on("open", function() {
   console.log('apeorupaurpoauer');
 });
