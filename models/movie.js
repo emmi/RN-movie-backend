@@ -6,13 +6,13 @@ var movieSchema = new Schema({
     unique: true,
   },
   title: String,
-  year: Number,
+  release_year: Number,
   runtime: Number,
   genres: Array,
   status: String,
   overview: String,
-  posterPath: String,
-  votes: Number,
+  poster_path: String,
+  vote_average: Number,
 });
 
 export default mongoose.model('movie', movieSchema);
